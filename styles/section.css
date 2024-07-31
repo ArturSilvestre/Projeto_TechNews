@@ -12,15 +12,12 @@ section header {
             height: 16px;
         }
         &:hover span {
-            background-image: url("../assets/icons/ArrowRight-hover.svg");
+            background-image: url("../assets/icons/ArrowRightHover.svg");
             width: 16px;
             height: 16px;
         }
     }
 }
-
-
-/* Section Featured */
 
 #featured {
     grid-area: featured;
@@ -30,14 +27,14 @@ section header {
     }
     .card {
         position: relative;
-        overflow: hidden;
         border-radius: 4px;
+        overflow: hidden;
         &::before {
             content: "";
             position: absolute;
             inset: 0;
             top: 50%;
-            background: linear-gradient(180deg, transparent 0%, #020617 100%);
+            background: linear-gradient( 180deg, transparent 0%, #020617 100%);
         }
         figcaption {
             position: absolute;
@@ -48,38 +45,44 @@ section header {
             }
             h2 {
                 margin-top: 8px;
+                /* Display only 3 lines and add ... if the text can't fit */
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
             }
         }
     }
 }
 
-
-/* Section Weekly */
-
 #weekly {
     grid-area: weekly;
     &>div {
-        grid-template-columns: repeat(4, 292px);
+        grid: repeat(4, 292px);
     }
     img {
         height: 160px;
     }
     figure {
         position: relative;
-    }
-    .content-tag {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-    }
-    p {
-        margin-top: 8px;
-        font-weight: 800;
+        .content-tag {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+        p {
+            margin-top: 8px;
+            font-weight: 800;
+            /* Display only 3 lines and add ... if the text can't fit */
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+        }
     }
 }
-
-
-/* Section AI */
 
 #ai {
     grid-area: ai;
@@ -95,4 +98,16 @@ section header {
 
 aside {
     grid-area: aside;
+}
+
+#more {
+    margin-top: 32px;
+    h3 {
+        margin-top: 8px;
+    }
+    img {
+        width: 72px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
 }
